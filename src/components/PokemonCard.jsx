@@ -9,9 +9,8 @@ function PokemonCard({ pokemon }) {
   };
   return (
     <figure>
-      {pokemon.imgSrc ===
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" ? (
-        <img src={pokemon.imgSrc} alt="Pokemon" />
+      {pokemon.imgSrc ? (
+        <img src={pokemon.imgSrc} alt={pokemon.name} />
       ) : (
         <p>???</p>
       )}
