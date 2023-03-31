@@ -1,21 +1,16 @@
-function NavBar({ handlePrevious, handleNext, pokemonIndex, pokemonList }) {
+function NavBar({ handleClickButton, pokemonList }) {
   return (
     <div>
-      {pokemonIndex === 0 ? (
-        <div></div>
-      ) : (
-        <div>
-          <button onClick={handlePrevious}>Previous</button>
-        </div>
-      )}
-      {pokemonIndex === pokemonList.length - 1 ? (
-        <div></div>
-      ) : (
-        <div>
-          <button onClick={handleNext}>Next</button>
-        </div>
-      )}
+      {pokemonList.map((pokemon) => (
+        <button
+          key={pokemon.name}
+          onClick={() => handleClickButton(pokemon.name)}
+        >
+          {pokemon.name}
+        </button>
+      ))}
     </div>
   );
 }
 export default NavBar;
+
