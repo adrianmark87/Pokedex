@@ -1,4 +1,17 @@
+import { useEffect } from "react";
+
 function NavBar({ handlePrevious, handleNext, pokemonIndex, pokemonList }) {
+  const currentPokemon = pokemonList[pokemonIndex];
+
+  useEffect(() => {
+    window.alert("hello pokemon trainer :)");
+  }, []);
+
+  useEffect(() => {
+    if (pokemonList[pokemonIndex].name === "pikachu") {
+      window.alert("pika pikachu !!!");
+    }
+  }, [currentPokemon.name]);
   return (
     <div>
       {pokemonIndex === 0 ? (
@@ -18,4 +31,5 @@ function NavBar({ handlePrevious, handleNext, pokemonIndex, pokemonList }) {
     </div>
   );
 }
+
 export default NavBar;
