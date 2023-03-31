@@ -7,11 +7,9 @@ function NavBar({ handlePrevious, handleNext, pokemonIndex, pokemonList }) {
     window.alert("hello pokemon trainer :)");
   }, []);
 
-  useEffect(() => {
-    if (pokemonList[pokemonIndex].name === "pikachu") {
-      window.alert("pika pikachu !!!");
-    }
-  }, [currentPokemon.name]);
+  pokemonList[pokemonIndex].name === "pikachu" &&
+    window.alert("pika pikachu !!!");
+
   return (
     <div>
       {pokemonIndex === 0 ? (
